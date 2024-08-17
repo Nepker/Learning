@@ -1,0 +1,33 @@
+const userName = 'Jane'
+userName ? console.log(`Jane, ${userName}!`) : console.log('Hello,  Jane!');
+const userQuestion = 'What do you want to know?  '
+console.log(userQuestion  + userName)
+const randomNumber = Math.floor(Math.random() *8);
+let eightBall = '3'
+switch (eightBall) {
+  case '0':
+    console.log('It is certain');
+    break;
+  case '1':
+    console.log('It is decidedly so');
+    break;
+  case '2':
+    console.log('Reply hazy try again');
+    break;
+    case '3':
+    console.log('Cannot predict now');
+    break;
+  case '4':
+    console.log('Do not count on it');
+    break;
+  case '5':
+    console.log('PMy source say no');
+    break;
+    case '6':
+    console.log('Outlook not so good');
+    break;
+  default:
+    console.log('Sign point to yes');
+    break;
+}
+console.log(eightBall)
