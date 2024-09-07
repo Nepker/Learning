@@ -8,3 +8,4 @@ let spaceship = {
 
 // Write your code below
 const crewCount = spaceship.numCrew;
+const planetArray = spaceship.flightPath;
