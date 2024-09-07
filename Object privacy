@@ -1,0 +1,11 @@
+
+
+const robot = {
+  _energyLevel: 'high', //can be change to string or integer
+  recharge(){
+    this._energyLevel += 30;
+    console.log(`Recharged! Energy is currently at ${this._energyLevel}%.`)
+  }
+};
+robot.recharge() //this gives funky value by adding string and integer
+
