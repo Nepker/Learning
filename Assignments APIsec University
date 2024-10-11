@@ -1,0 +1,37 @@
+Assignments:
+1. Improper assets Management assessment:
+Which version of the vAPI/API9 endpoint was recently launched?
+v2
+
+What status code is sent back to /vapi/api9/v2/user/login using an incorrect pin?
+200
+
+What HTTP status code is sent after six consecutive incorrect requests to /vapi/api9/v2/user/login?
+500
+
+Which headers are included in responses to /vapi/api9/v2/user/login that are missing from /vapi/api9/v1/user/login?
+X-RateLimit-Limit: 5
+X-RateLimit-Limit-Remaining: 4
+
+What is the flag for successfully discovering richardbranson's pin?
+api9_81e306bdd20a7734e244
+
+2. Mass assignment assessment:
+
+Which two requests are available for testing vAPI for Mass Assignment (API6)?
+GET /vapi/api6/user/me
+POST /vapi/api6/user
+
+What is the field that can be used in a mass assignment attack against /vapi/api6?
+credit
+
+What is the flag for successfully exploiting vAPI's Mass Assignment vulnerability?
+api6_afb969db8b6e272694b4
+
+What HTTP response code is returned after performing a successful mass assignment attack against vAPI?
+200
+
+What HTTP response code is returned when sending a PUT request to http://vapi.apisec.ai/vapi/api6/user?
+500
+
+3. 

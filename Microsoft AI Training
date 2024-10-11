@@ -1,0 +1,294 @@
+Microsoft AI Fundamentals:
+ntroduction to AI
+Completed 100 XP
+
+    2 minutes
+
+Artificial Intelligence (AI) enables us to build amazing software that can improve health care, enable people to overcome physical disadvantages, empower smart infrastructure, create incredible entertainment experiences, and even save the planet!
+
+Watch the following video to see some ways that AI can be used.
+What is AI?
+
+Simply put, AI is software that imitates human behaviors and capabilities. Key workloads include:
+
+    Machine learning - This is often the foundation for an AI system, and is the way we "teach" a computer model to make predictions and draw conclusions from data.
+    Computer vision - Capabilities within AI to interpret the world visually through cameras, video, and images.
+    Natural language processing - Capabilities within AI for a computer to interpret written or spoken language, and respond in kind.
+    Document intelligence - Capabilities within AI that deal with managing, processing, and using high volumes of data found in forms and documents.
+    Knowledge mining - Capabilities within AI to extract information from large volumes of often unstructured data to create a searchable knowledge store.
+    Generative AI - Capabilities within AI that create original content in a variety of formats including natural language, image, code, and more.
+
+Understand machine learning
+Completed 100 XP
+
+    4 minutes
+
+Machine Learning is the foundation for most AI solutions. Since the 1950's, researchers, often known as data scientists, have worked on different approaches to AI. Most modern applications of AI have their origins in machine learning, a branch of AI that combines computer science and mathematics.
+
+Let's start by looking at a real-world example of how machine learning can be used to solve a difficult problem.
+
+Sustainable farming techniques are essential to maximize food production while protecting a fragile environment. The Yield, an agricultural technology company based in Australia, uses sensors, data, and machine learning to help farmers make informed decisions related to weather, soil, and plant conditions.
+
+View the following video to learn more.
+How machine learning works
+
+So how do machines learn?
+
+The answer is, from data. In today's world, we create huge volumes of data as we go about our everyday lives. From the text messages, emails, and social media posts we send to the photographs and videos we take on our phones, we generate massive amounts of information. More data still is created by millions of sensors in our homes, cars, cities, public transport infrastructure, and factories.
+
+Data scientists can use all of that data to train machine learning models that can make predictions and inferences based on the relationships they find in the data.
+
+Machine learning models try to capture the relationship between data. For example, suppose an environmental conservation organization wants volunteers to identify and catalog different species of wildflower using a phone app. The following animation shows how machine learning can be used to enable this scenario.
+
+An animation of the steps of machine learning.
+
+    A team of botanists and scientists collect data on wildflower samples.
+    The team labels the samples with the correct species.
+    The labeled data is processed using an algorithm that finds relationships between the features of the samples and the labeled species.
+    The results of the algorithm are encapsulated in a model.
+    When new samples are found by volunteers, the model can identify the correct species label.
+
+Approaches to AI have advanced to complete tasks of much greater complexity. These complex models form the basis of AI capabilities.
+Machine learning in Microsoft Azure
+
+Microsoft Azure provides the Azure Machine Learning service - a cloud-based platform for creating, managing, and publishing machine learning models. Azure Machine Learning Studio offers multiple authoring experiences such as:
+
+    Automated machine learning: this feature enables non-experts to quickly create an effective machine learning model from data.
+    Azure Machine Learning designer: a graphical interface enabling no-code development of machine learning solutions.
+    Data metric visualization: analyze and optimize your experiments with visualization.
+    Notebooks: write and run your own code in managed Jupyter Notebook servers that are directly integrated in the studio.
+
+Understand natural language processing
+Completed 100 XP
+
+    4 minutes
+
+Natural language processing (NLP) is the area of AI that deals with creating software that understands written and spoken language.
+
+NLP enables you to create software that can:
+
+    Analyze and interpret text in documents, email messages, and other sources.
+    Interpret spoken language, and synthesize speech responses.
+    Automatically translate spoken or written phrases between languages.
+    Interpret commands and determine appropriate actions.
+
+For example, Starship Commander is a virtual reality (VR) game from Human Interact that takes place in a science fiction world. The game uses natural language processing to enable players to control the narrative and interact with in-game characters and starship systems.
+
+Watch the following video to learn more.
+Natural language processing in Microsoft Azure
+
+You can use Microsoft's Azure AI Language to build natural language processing solutions. Some features of Azure AI Language include understanding and analyzing text, training conversational language models that can understand spoken or text-based commands, and building intelligent applications.
+
+Microsoft's Azure AI Speech is a service that can be used to build audio-based natural language processing solutions. Azure AI Speech features include speech recognition and synthesis, real-time translations, conversation transcriptions, and more.
+
+Azure AI Translator is a service that uses a Neural Machine Translation (NMT) model for translation, which analyzes the semantic context of the text and renders a more accurate and complete text translation as a result.
+
+You can explore Azure AI Language features in the Azure Language Studio and Azure AI Speech features in the Azure Speech Studio. The service features are available for use and testing in the studios and other programming languages.
+
+Understand document intelligence and knowledge mining
+Completed 100 XP
+
+    3 minutes
+
+Document Intelligence is the area of AI that deals with managing, processing, and using high volumes of a variety of data found in forms and documents. Document intelligence enables you to create software that can automate processing for contracts, health documents, financial forms and more
+Document intelligence in Microsoft Azure
+
+You can use Microsoft's Azure AI Document Intelligence to build solutions that manage and accelerate data collection from scanned documents. Features of Azure AI Document Intelligence help automate document processing in applications and workflows, enhance data-driven strategies, and enrich document search capabilities. You can use prebuilt models to add intelligent document processing for invoices, receipts, health insurance cards, tax forms, and more. You can also use Azure AI Document Intelligence to create custom models with your own labeled datasets. The service features are available for use and testing in the Document Intelligence Studio and other programming languages.
+
+Screenshot of a tax document in Azure Document Intelligence Studio.
+
+This example shows information extracted from a tax form using Azure AI Document Intelligence.
+Knowledge Mining
+
+Knowledge mining is the term used to describe solutions that involve extracting information from large volumes of often unstructured data to create a searchable knowledge store.
+Knowledge mining in Microsoft Azure
+
+One Microsoft knowledge mining solution is Azure AI Search, an enterprise, search solution that has tools for building indexes. The indexes can then be used for internal only use, or to enable searchable content on public facing internet assets.
+
+Azure AI Search can utilize the built-in AI capabilities of Azure AI services such as image processing, document intelligence, and natural language processing to extract data. The product's AI capabilities makes it possible to index previously unsearchable documents and to extract and surface insights from large amounts of data quickly.
+
+Screenshot of a search web page for a travel company.
+
+In this example, a travel web site uses Azure AI Search to power searching for information about destinations based on information extracted from images or text using AI services.
+
+Tip
+
+Learn how a global engineering company uses knowledge mining to create more accurate bid proposals and reclaim the time it would take to manually compile them in this case study
+
+Understand generative AI
+Completed 100 XP
+
+    2 minutes
+
+Generative AI describes a category of capabilities within AI that create original content. People typically interact with generative AI that has been built into chat applications. Generative AI applications take in natural language input, and return appropriate responses in a variety of formats including natural language, image, code, and audio.
+Generative AI in Microsoft Azure
+
+Azure OpenAI Service is Microsoft's cloud solution for deploying, customizing, and hosting generative AI models. It brings together the best of OpenAI's cutting edge models and APIs with the security and scalability of the Azure cloud platform.
+
+Azure OpenAI Service supports many generative model choices that can serve different needs. You can use Azure AI Studio to create generative AI solutions, such as custom copilot chat-based assistants that use Azure OpenAI Service models
+
+A screenshot of a chat interface with AI-generated content.
+
+In this example, an Azure OpenAI Service model is used to power a copilot application that can be used to generate original content in response to user prompts, such as a request to write a cover letter.
+
+Tip
+
+Learn how a large manufacturing company uses Azure OpenAI to foster better communication and collaboration in this case study
+
+Challenges and risks with AI
+Completed 100 XP
+
+    3 minutes
+
+Artificial Intelligence is a powerful tool that can be used to greatly benefit the world. However, like any tool, it must be used responsibly.
+
+The following table shows some of the potential challenges and risks facing an AI application developer.
+Challenge or Risk 	Example
+Bias can affect results 	A loan-approval model discriminates by gender due to bias in the data with which it was trained
+Errors may cause harm 	An autonomous vehicle experiences a system failure and causes a collision
+Data could be exposed 	A medical diagnostic bot is trained using sensitive patient data, which is stored insecurely
+Solutions may not work for everyone 	A home automation assistant provides no audio output for visually impaired users
+Users must trust a complex system 	An AI-based financial tool makes investment recommendations - what are they based on?
+Who's liable for AI-driven decisions? 	An innocent person is convicted of a crime based on evidence from facial recognition – who's responsible?
+
+
+Understand Responsible AI
+Completed 100 XP
+
+    10 minutes
+
+At Microsoft, AI software development is guided by a set of six principles, designed to ensure that AI applications provide amazing solutions to difficult problems without any unintended negative consequences.
+Fairness
+
+AI systems should treat all people fairly. For example, suppose you create a machine learning model to support a loan approval application for a bank. The model should predict whether the loan should be approved or denied without bias. This bias could be based on gender, ethnicity, or other factors that result in an unfair advantage or disadvantage to specific groups of applicants.
+
+Azure Machine Learning includes the capability to interpret models and quantify the extent to which each feature of the data influences the model's prediction. This capability helps data scientists and developers identify and mitigate bias in the model.
+
+Another example is Microsoft's implementation of Responsible AI with the Face service, which retires facial recognition capabilities that can be used to try to infer emotional states and identity attributes. These capabilities, if misused, can subject people to stereotyping, discrimination or unfair denial of services.
+
+For more details about considerations for fairness, watch the following video.
+Reliability and safety
+
+AI systems should perform reliably and safely. For example, consider an AI-based software system for an autonomous vehicle; or a machine learning model that diagnoses patient symptoms and recommends prescriptions. Unreliability in these kinds of systems can result in substantial risk to human life.
+
+AI-based software application development must be subjected to rigorous testing and deployment management processes to ensure that they work as expected before release.
+
+For more information about considerations for reliability and safety, watch the following video.
+Privacy and security
+
+AI systems should be secure and respect privacy. The machine learning models on which AI systems are based rely on large volumes of data, which may contain personal details that must be kept private. Even after the models are trained and the system is in production, privacy and security need to be considered. As the system uses new data to make predictions or take action, both the data and decisions made from the data may be subject to privacy or security concerns.
+
+For more details about considerations for privacy and security, watch the following video.
+Inclusiveness
+
+AI systems should empower everyone and engage people. AI should bring benefits to all parts of society, regardless of physical ability, gender, sexual orientation, ethnicity, or other factors.
+
+For more details about considerations for inclusiveness, watch the following video.
+Transparency
+
+AI systems should be understandable. Users should be made fully aware of the purpose of the system, how it works, and what limitations may be expected.
+
+For more details about considerations for transparency, watch the following video.
+Accountability
+
+People should be accountable for AI systems. Designers and developers of AI-based solutions should work within a framework of governance and organizational principles that ensure the solution meets ethical and legal standards that are clearly defined.
+
+For more details about considerations for accountability, watch the following video.
+
+The principles of responsible AI can help you understand some of the challenges facing developers as they try to create ethical AI solutions.
+Further resources
+
+For more resources to help you put the responsible AI principles into practice, see https://www.microsoft.com/ai/responsible-ai-resources.
+
+To see these policies in action you can read about Microsoft’s framework for building AI systems responsibly.
+
+
+1.
+
+You want to create a model to predict sales of ice cream based on historic data that includes daily ice cream sales totals and weather measurements. Which Azure service should you use?
+
+Azure Machine Learning
+
+That is correct. Azure Machine Learning enables you to train a predictive model from the existing data.
+
+Azure AI Bot Service
+
+Azure AI Language
+2.
+
+You work for a wildlife sanctuary and are considering using AI to identify bird species from images. Which AI service should you use to prototype your idea?
+
+Azure AI Vision
+
+Correct. Azure AI Vision allows you to add images to the existing model to improve the image identifier model. This is a good choice for identifying the small differences between bird species.
+
+Azure AI Search
+
+Azure OpenAI
+3.
+
+A predictive app provides audio output for visually impaired users. Which principle of Responsible AI is reflected here?
+
+Transparency
+
+Inclusiveness
+
+That is correct. Inclusiveness is about how AI should bring benefits to all parts of society, regardless of physical ability, gender, sexual orientation, ethnicity, or other factors.
+
+Fairness
+
+Summary
+Completed 100 XP
+
+    1 minute
+
+Artificial Intelligence enables the creation of powerful solutions to many kinds of problems. AI systems can exhibit human characteristics to analyze the world around them, make predictions or inferences, and act on them in ways that we could only imagine a short time ago.
+
+With this power, comes responsibility. As developers of AI solutions, we must apply principles that ensure that everyone benefits from AI without disadvantaging any individual or section of society.
+
+
+Machine Learning:
+Machine learning is in many ways the intersection of two disciplines - data science and software engineering. The goal of machine learning is to use data to create a predictive model that can be incorporated into a software application or service. To achieve this goal requires collaboration between data scientists who explore and prepare the data before using it to train a machine learning model, and software developers who integrate the models into applications where they're used to predict new data values (a process known as inferencing).
+
+In this module, you'll explore some of the core concepts on which machine learning is based, learn how to identify different kinds of machine learning models, and examine the ways in which machine learning models are trained and evaluated. Finally, you'll learn how to use Microsoft Azure Machine Learning to train and deploy a machine learning model, without needing to write any code.
+
+Note
+
+Machine learning is based on mathematical and statistical techniques, some of which are described at a high level in this module. Don't worry if you're not a mathematical expert though! The goal of the module is to help you gain an intuition of how machine learning works - we'll keep the mathematics to the minimum required to understand the core concepts.
+
+What is machine learning?
+Completed 100 XP
+
+    5 minutes
+
+Machine learning has its origins in statistics and mathematical modeling of data. The fundamental idea of machine learning is to use data from past observations to predict unknown outcomes or values. For example:
+
+    The proprietor of an ice cream store might use an app that combines historical sales and weather records to predict how many ice creams they're likely to sell on a given day, based on the weather forecast.
+    A doctor might use clinical data from past patients to run automated tests that predict whether a new patient is at risk from diabetes based on factors like weight, blood glucose level, and other measurements.
+    A researcher in the Antarctic might use past observations automate the identification of different penguin species (such as Adelie, Gentoo, or Chinstrap) based on measurements of a bird's flippers, bill, and other physical attributes.
+
+Machine learning as a function
+
+Because machine learning is based on mathematics and statistics, it's common to think about machine learning models in mathematical terms. Fundamentally, a machine learning model is a software application that encapsulates a function to calculate an output value based on one or more input values. The process of defining that function is known as training. After the function has been defined, you can use it to predict new values in a process called inferencing.
+
+Let's explore the steps involved in training and inferencing.
+
+Diagram showing the training and inferencing phases in machine learning.
+
+    The training data consists of past observations. In most cases, the observations include the observed attributes or features of the thing being observed, and the known value of the thing you want to train a model to predict (known as the label).
+
+    In mathematical terms, you'll often see the features referred to using the shorthand variable name x, and the label referred to as y. Usually, an observation consists of multiple feature values, so x is actually a vector (an array with multiple values), like this: [x1,x2,x3,...].
+
+    To make this clearer, let's consider the examples described previously:
+        In the ice cream sales scenario, our goal is to train a model that can predict the number of ice cream sales based on the weather. The weather measurements for the day (temperature, rainfall, windspeed, and so on) would be the features (x), and the number of ice creams sold on each day would be the label (y).
+        In the medical scenario, the goal is to predict whether or not a patient is at risk of diabetes based on their clinical measurements. The patient's measurements (weight, blood glucose level, and so on) are the features (x), and the likelihood of diabetes (for example, 1 for at risk, 0 for not at risk) is the label (y).
+        In the Antarctic research scenario, we want to predict the species of a penguin based on its physical attributes. The key measurements of the penguin (length of its flippers, width of its bill, and so on) are the features (x), and the species (for example, 0 for Adelie, 1 for Gentoo, or 2 for Chinstrap) is the label (y).
+
+    An algorithm is applied to the data to try to determine a relationship between the features and the label, and generalize that relationship as a calculation that can be performed on x to calculate y. The specific algorithm used depends on the kind of predictive problem you're trying to solve (more about this later), but the basic principle is to try to fit a function to the data, in which the values of the features can be used to calculate the label.
+
+    The result of the algorithm is a model that encapsulates the calculation derived by the algorithm as a function - let's call it f. In mathematical notation:
+
+    y = f(x)
+
+    Now that the training phase is complete, the trained model can be used for inferencing. The model is essentially a software program that encapsulates the function produced by the training process. You can input a set of feature values, and receive as an output a prediction of the corresponding label. Because the output from the model is a prediction that was calculated by the function, and not an observed value, you'll often see the output from the function shown as ŷ (which is rather delightfully verbalized as "y-hat").
+

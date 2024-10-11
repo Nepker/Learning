@@ -1,0 +1,647 @@
+Implementat an Identity Management solution::
+Implement Initial Configuration of Microsoft Entra ID:
+Introduction
+Completed 100 XP
+
+    1 minute
+
+In this module, you learn how to configure and manage a Microsoft Entra tenant. You explore Microsoft Entra roles, custom domains, and company branding options. In addition, you learn how to configure delegation by using administrative units and configure several tenant-wide settings within Microsoft Entra ID.
+Learning objectives
+
+In this module, you will:
+
+    Company branding
+    Configure and manage Microsoft Entra roles.
+    Configure delegation by using administrative units.
+    Configure and manage custom domains.
+    Evaluate permissions based on role assignments and settings.
+    Configure tenant-wide settings.
+
+Prerequisites
+
+Prior usage experience with the Azure portal user interface or the Microsoft Entra admin center.
+
+Configure company brand
+100 XP
+
+    3 minutes
+
+Screenshot of the Microsoft Entra ID Company Branding page. You can pick a default language, a corporate logo, and over values.
+
+You can use your organization's logo and custom color schemes to provide a consistent experience on your sign-in pages. Your sign-in pages appear when users sign in to your organization's web-based apps, such as Microsoft 365, which uses Microsoft Entra ID as your identity provider. Adding custom branding requires you to have either Microsoft Entra ID premium P1, P2, or Office 365 (for Office 365 apps) license.
+
+To set the company branding, open up the Microsoft Entra ID page in the Azure portal. Then launch Company branding from the Manage menu. A premium license is required for the menu option to be present.
+Setting 	Description
+Language 	The language is automatically set as your default and can't be changed.
+Sign-in page background image 	Select a .png or .jpg image file for the background of your sign-in pages. The image is anchored to the center of the browser, and scales to the size of the viewable space. You can't select an image larger than 1920x1080 pixels in size or that has a file size more than 300,000 bytes.
+Banner logo 	Select a .png or .jpg version of your logo to appear on the sign-in page after the user enters a username and on the My Apps portal page.
+Username hint 	Type the hint text that appears to users if they forget their username. This text must be Unicode, without links or code, and can't exceed 64 characters. If guests sign in to your app, we suggest not adding this hint.
+Sign-in page text and formatting 	Type the text that appears on the bottom of the sign-in page. You can use this text to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1,024 characters.
+
+Configure and manage Microsoft Entra roles
+Completed 100 XP
+
+    7 minutes
+
+Microsoft Entra ID is Microsoft’s cloud-based identity and access management service, which helps your employee's sign-in and access resources in:
+
+    External resources, such as Microsoft 365, the Azure portal, and thousands of other SaaS applications.
+    Internal resources, such as apps on your corporate network and intranet, along with any cloud apps developed by your own organization.
+
+Who uses Microsoft Entra ID?
+
+Microsoft Entra ID is intended for:
+
+    IT admins - As an IT admin, you can use Microsoft Entra ID to control access to your apps and your app resources, based on your business requirements. For example, you can use Microsoft Entra ID to require multifactor authentication when accessing important organizational resources. Additionally, you can use Microsoft Entra ID to automate user provisioning between your existing Windows Server AD and your cloud apps, including Microsoft 365. Finally, Microsoft Entra ID gives you powerful tools to automatically help protect user identities and credentials and to meet your access governance requirements.
+    App developers - As an app developer, you can use Microsoft Entra ID as a standards-based approach for adding single sign-on (SSO) to your app, allowing it to work with a user's pre-existing credentials. Microsoft Entra ID also provides APIs that can help you build personalized app experiences using existing organizational data.
+    Microsoft 365, Office 365, Azure, or Dynamics CRM Online subscribers - As a subscriber, you're already using Microsoft Entra ID. Each Microsoft 365, Office 365, Azure, and Dynamics CRM Online tenant is automatically a Microsoft Entra tenant. You can immediately start to manage access to your integrated cloud apps.
+
+In Microsoft Entra ID, if one of your users needs permission to manage Microsoft Entra resources, you must assign them to a role that provides the permissions they need.
+
+If you're new to Azure, you might find it a little challenging to understand all the different roles in Azure. The following section helps explain the following roles and provides additional information on Azure roles and Microsoft Entra roles:
+
+    Classic subscription administrator roles
+    Azure roles
+    Microsoft Entra roles
+
+Microsoft Entra roles
+
+Microsoft Entra roles are used to manage Microsoft Entra resources in a directory. Actions such as create or edit users are the most common. However, the need to assign administrative roles to others, reset user passwords, manage user licenses, and manage domains are common. The following table describes a few of the more important Microsoft Entra roles.
+Microsoft Entra role 	Permissions 	Notes
+Global Administrator 	Manage access to all administrative features in Microsoft Entra ID, and services that federate to Microsoft Entra ID 	The person who signs up for the Microsoft Entra tenant becomes the first Global Administrator.
+	Assign administrator roles to others 	
+	Reset the password for any user and all other administrators 	
+User Administrator 	Create and manage all aspects of users and groups 	
+	Manage support tickets 	
+	Monitor service health 	
+	Change passwords for users, Helpdesk administrators, and other User Administrators 	
+Billing Administrator 	Make purchases 	
+	Manage subscriptions 	
+	Manage support tickets 	
+	Monitors service health 	
+
+In the Azure portal, you can see the list of Microsoft Entra roles on the Roles and administrators screen.
+
+Screenshot of the Microsoft Entra roles on the Roles and administrators window in Microsoft Entra ID manage menu of the Azure portal.
+Differences between Azure roles and Microsoft Entra roles
+
+At a high level, Azure roles control permissions to manage Azure resources, while Microsoft Entra roles control permissions to manage Microsoft Entra resources. The following table compares some of the differences.
+Azure roles 	Microsoft Entra roles
+Manage access to Azure resources 	Manage access to Microsoft Entra resources
+Supports custom roles 	Supports custom roles
+Scope can be specified at multiple levels (management group, subscription, resource group, resource) 	Scope is at the tenant level or can be applied to an Administrative Unit
+Role information can be accessed in Azure portal, Azure CLI, Azure PowerShell, Azure Resource Manager templates, REST API 	Role information can be accessed in Azure admin portal, Microsoft 365 admin center, Microsoft Graph, and PowerShell
+Do Azure roles and Microsoft Entra roles overlap?
+
+By default, Azure roles and Microsoft Entra roles don't span Azure and Microsoft Entra ID. However, if a Global Administrator elevates their access by choosing the Access management for Azure resources switch in the Azure portal, the Global Administrator will be granted the User Access Administrator role (an Azure role) on all subscriptions for a particular tenant. The User Access Administrator role enables the user to grant other users access to Azure resources. This switch can be helpful to regain access to a subscription.
+
+Several Microsoft Entra roles span Microsoft Entra ID and Microsoft 365, such as the Global Administrator and User Administrator roles. For example, if you're a member of the Global Administrator role, you have global administrator capabilities in Microsoft Entra ID and Microsoft 365, such as making changes to Microsoft Exchange and Microsoft SharePoint. However, by default, the Global Administrator doesn't have access to Azure resources.
+
+Diagram of relationship of Azure roles to Microsoft Entra roles. Azure roles accessed in Azure tenant. Microsoft Entra roles also accessed from Microsoft Entra ID and Microsoft 365.
+Assign roles
+
+There are multiple ways to assign roles within Microsoft Entra ID. You need to pick the one that best meets your needs. The user interface might be slightly different for each method, however the configuration options are similar. Methods for assigning roles include:
+
+    Assign a role to a user or group
+        Microsoft Entra ID - Roles and administration - Select a role - + Add Assignment
+
+    Assign a user or group to a role
+        Microsoft Entra ID - Open Users (or Groups) - Select an User (or group) - Assigned roles - + Add Assignment
+
+    Assign a role to a broad-scope, like a Subscription, Resource Group, or Management Group
+        Done via the Access control (IAM) within each settings screen
+
+    Assign a role using PowerShell or Microsoft Graph API
+
+    Assign a role using Privileged Identity Management (PIM)
+
+The best method for your configuration needs can be used, but care must be taken as there are no built in restrictions. You could accidentally assign an administrative role to a group with users who don't need administrative access. Extra permissions could lead to a solution modified by a user without proper knowledge of what they're doing, or even a potential avenue for attackers. Proper identity governance is the key.
+Example - using PIM to assign a role
+
+A common way to assign Microsoft Entra roles to a user is on the Assigned roles page for a user. You can also configure the user eligibility to be elevated just-in-time into a role using Privileged Identity Management (PIM).
+
+Note
+
+If you have an Microsoft Entra ID Premium P2 license plan and already use PIM, all role management tasks are performed in the Privileged Identity Management experience. This feature is currently limited to assigning only one role at a time. You can't currently select multiple roles and assign them to a user all at once.
+
+Screenshot of Privileged Identity Manager for users assigned Global Admin and have a Premium P2 license.
+Create and assign a custom role in Microsoft Entra ID
+
+This section describes how to create new custom roles in Microsoft Entra ID. For the basics of custom roles, see the custom roles overview. The role can be assigned either at the directory-level scope or an app registration resource scope only.
+
+Custom roles can be created in the Roles and administrators tab on the Microsoft Entra ID overview page.
+
+    Select Microsoft Entra ID - Roles and administrators - New custom role.
+
+    Screenshot of Create or edit custom roles from the Roles and administrators page.
+
+    On the Basics tab, provide a name and description for the role and then select Next.
+
+    Screenshot of the basics tab. You provide a name and description for a custom role on the Basics tab.
+
+    On the Permissions tab, select the permissions necessary to manage basic properties and credential properties of app registrations.
+
+    First, enter "credentials" in the search bar and select the microsoft.directory/applications/credentials/update permission.
+
+    Screenshot of the Select the permissions for a custom role on the Permissions tab.
+
+    Next, enter "basic" in the search bar, select the microsoft.directory/applications/basic/update permission, and then select Next.
+
+    On the Review + create tab, review the permissions and select Create.
+
+Your custom role will show up in the list of available roles to assign.
+
+Exercise manage users roles
+Completed 100 XP
+
+    8 minutes
+
+You need to assign extra permissions to one of your newly created administrators.
+
+In this exercise, you'll create a user account to use in the exercises.
+Create an Azure account and add Microsoft Entra ID Premium P2 trial licenses
+
+The tasks in this exercise and the exercises in this learning path require you to already have an Azure subscription that you can use or to sign up for an Azure trial account. If you already have your own Azure subscription, you might skip this task and continue to the next.
+
+    In a web browser, go to Azure portal.
+    Scroll down through the page to learn more about the benefits and free services available.
+    Select Start free.
+    Use the wizard to sign up for your Azure trial subscription.
+    You need to a Microsoft Entra ID P2 license to complete some of the exercises. In the organization you created, search for and then select Microsoft Entra ID.
+    Select Licenses in the menu.
+    In the right Quick tasks menu of the Licenses - Overview page, select Get a free trial
+    Under Getting started with Microsoft Entra ID, select Get a free trial for Microsoft Entra ID Premium.
+    In the Activate pane, under Microsoft Entra ID PREMIUM P2, select Free trial and then select Activate.
+    In the navigation menu on the left, select Overview.
+    Refresh the browser until you see Microsoft Entra ID Premium P2 under the organization name. It might take a couple of minutes.
+    You might need to sign out and sign back into Microsoft Azure if you encounter any problems with expected features not being available.
+
+Add a new user
+
+Now, let's create a user account.
+
+    Sign in to the Microsoft Entra admin center as a Global administrator
+
+    In the menu on the left expand the Identity section.
+
+    In the left navigation menu, under Users, select All Users, then select +New User.
+
+    Create a user using the following information:
+
+    Setting 	Value
+    User principal name 	AdeleV
+    Mail nickname (you might have to uncheck the Derive from user principal name. 	AdeleV
+    Display name 	Adele Vance
+    Password 	Pass@word1
+
+    Select Create. The user is now created and registered to your organization.
+
+Assign a role to a user
+
+Using Microsoft Entra ID, you can designate limited administrators to manage identity tasks in less-privileged roles. Administrators can be assigned for such purposes as adding or changing users, assigning administrative roles, resetting user passwords, managing user licenses, and managing domain names.
+
+    In Microsoft Entra ID, All users screen, select Adele Vance.
+
+    On the user’s profile page, select Assigned roles. The Assigned roles page appears.
+
+    Select Add assignments, select the role to assign to the user (for example, Application administrator), and then select Add.
+
+    Screenshot of the Assigned roles page Adele Vance.
+
+    Select + Add Assignment.
+
+    Screenshot of the Assigned roles page - showing the selected role of Application administrator.
+
+The newly assigned Application administrator role appears on the user’s Assigned roles page.
+Remove a role assignment
+
+If you need to remove the role assignment from a user, you can also do that from the Assigned roles page.
+To remove a role assignment from a user
+
+    In Microsoft Entra ID, select Users - All User, and then select the user getting the role assignment removed. For example, Adele Vance.
+
+    Select Assigned roles, then select the name of the role your wish to removed - Application Administrator.
+
+    On the far right side of the screen, select Remove. Then select Yes option when prompted for confirmation.
+
+    Screenshot of the Remove assignments dialog box with Yes highlighted.
+
+The Application administrator role is removed from the user and it no longer appears on the Adele Vance – Assigned roles page.
+
+Configure delegation by using administrative units
+Completed 100 XP
+
+    7 minutes
+
+Administrative units are Microsoft Entra ID resources that can be containers for other Microsoft Entra resources. An administrative unit can contain only users, groups, and devices.
+
+Administrative units restrict permissions in a role to any portion of your organization that you define. You could, for example, use administrative units to delegate the Helpdesk Administrator role to regional support specialists, so they can manage users only in the region that they support. You can manage administrative units by using the Azure portal, PowerShell cmdlets and scripts, or Microsoft Graph.
+What is an administrative unit?
+
+In Microsoft Entra ID, using a single tenant if you assign a user any administrator role, they're now an admin over every user in the tenant. Always think about the security principle of least privilege, it's always the best way to grant administrative responsibilities. Administrative units are containers created to solve for this challenge in Microsoft Entra ID. If you want a User Administrator to be able to manage only a specific set of users and group. Say to only manage users in the Research Department of a hospital. You could set up an administrative unit. Within that administrative unit you would add the users and groups for the research team, then you would add a specific user to the User Administrator role within the administrative unit, call them Admin-for-research. Admin-for-research would be able to manage the users in the administrative unit but not across the entire tenant, which helps to achieve the principle of least privilege.
+What admin roles are available for an administrative unit?
+
+You can have users in the following roles to manage your administrative unit:
+
+    Authentication administrator
+    Groups administrator
+    Helpdesk administrator
+    License administrator
+    Password administrator
+    User administrator
+
+Note
+
+If you are familiar with on-premises Active Directory, this capability was handled by setting up Organizational Units (OUs) in your directory and adding your users to the OU.
+Plan your administrative units
+
+You can use administrative units to logically group Microsoft Entra resources. An organization whose IT department is scattered globally might create administrative units that define relevant geographical boundaries. In another scenario, where a global organization has suborganizations that are semi-autonomous in their operations, administrative units could represent the suborganizations.
+
+The criteria on which administrative units are created are guided by the unique requirements of an organization. Administrative units are a common way to define structure across Microsoft 365 services. We recommend that you prepare your administrative units with their use across Microsoft 365 services in mind. You can get maximum value out of administrative units when you can associate common resources across Microsoft 365 under an administrative unit.
+
+You can expect the creation of administrative units in the organization to go through the following stages:
+
+    Initial adoption: Your organization will start creating administrative units based on initial criteria, and the number of administrative units will increase as the criteria are refined.
+    Pruning: After the criteria are defined, administrative units that are no longer required will be deleted.
+    Stabilization: Your organizational structure is defined, and the number of administrative units isn't going to change significantly in the short term.
+
+Delegate administration in Microsoft Entra ID
+
+With organizational growth comes complexity. One common response is to reduce some of the workload of access management with Microsoft Entra admin roles. You can assign the least possible privilege to users to access their apps and perform their tasks. Even if you don't assign the Global Administrator role to every application owner, you're placing application management responsibilities on the existing Global Administrators. There are many reasons for an organization move toward a more decentralized administration.
+
+In Microsoft Entra ID, you can delegate Application creation and management permissions in the following ways:
+
+    Restricting who can create applications and manage the applications they create. By default in Microsoft Entra ID, all users can register application registrations and manage all aspects of applications they create. You can restrict to only allow selected people that permission.
+    Assigning one or more owners to an application. A simple way to grant someone the ability to manage all aspects of Microsoft Entra ID configuration for a specific application.
+    Assigning a built-in administrative role that grants access to manage configuration in Microsoft Entra ID for all applications. The recommended way to grant IT experts access to manage broad application configuration permissions without granting access to manage other parts of Microsoft Entra ID not related to application configuration.
+    Create a custom role to define specific permissions. Then assign the role to a user to assign a limited-owner. Or you could assign at the directory scope - all applications - as a limited-administrator.
+
+When granting access, use one of the above methods for two reasons. First, delegating the ability to perform administrative tasks reduces global administrator overhead. Second, using limited permissions improves your security posture and reduces the potential for unauthorized access.
+Plan for Delegation
+
+It's work to develop a delegation model that fits your needs. Developing a delegation model is an iterative design process, and we suggest you follow these steps:
+
+    Define the roles you need
+    Delegate app administration
+    Grant the ability to register applications
+    Delegate app ownership
+    Develop a security plan
+    Establish emergency accounts
+    Secure your administrator roles
+    Make privileged elevation temporary
+
+Define roles
+
+Determine the Active Directory tasks that are carried out by administrators and how they map to roles. Each task should be evaluated for frequency, importance, and difficulty. These criteria are vital aspects of task definition because they govern whether a permission should be delegated:
+
+    Tasks that you do routinely, have limited risk, and are trivial to complete are excellent candidates for delegation.
+    Tasks that you do rarely but have potential risk across the organization and require high skill levels should be considered carefully before delegating. Instead, you can temporarily elevate an account to the required role or reassign the task.
+
+Delegate app administration
+
+The proliferation of apps within your organization can strain your delegation model. If it places the burden for application access management on the Global Administrator, it's likely that model increases its overhead as time goes on. If you have granted people the Global Administrator role for things like configuring enterprise applications, you can now offload them to the following less-privileged roles. Doing so helps to improve your security posture and reduces the potential for unfortunate mistakes. The most-privileged application administrator roles are:
+
+    The Application Administrator role, which grants the ability to manage all applications in the directory, including registrations, single sign-on settings, user and group assignments and licensing, Application Proxy settings, and consent. It doesn't grant the ability to manage Conditional Access.
+    The Cloud Application Administrator role, which grants all the abilities of the Application Administrator, except it doesn't grant access to Application Proxy settings (because it has no on-premises permission).
+
+Delegate app registration
+
+By default, all users can create application registrations. To selectively grant the ability to create application registrations:
+
+    Set Users can register applications to No in User settings
+    Assign the user to the Application Developer role
+
+To selectively grant the ability to consent to allow an application to access data:
+
+    Set Users can consent to applications accessing company data on their behalf To No in User settings under Enterprise apps
+    Assign the user to the Application Developer role
+
+When an Application Developer creates a new application registration, they're automatically added as the first owner.
+Delegate app ownership
+
+For even finer-grained app access delegation, you can assign ownership to individual enterprise applications. You improve existing support for assigning application registration owners. Ownership is assigned on a per-enterprise application basis in the Enterprise Applications screen. The benefit is owners can manage only the enterprise applications they own. For example, you can assign an owner for the Salesforce application, and that owner can manage access to and configuration for Salesforce, and no other applications. An enterprise application can have many owners, and a user can be the owner for many enterprise applications. There are two app owner roles:
+
+    The Enterprise Application Owner role grants the ability to manage the ‘enterprise applications that the user owns, including single sign-on settings, user and group assignments, and adding more owners. It doesn't grant the ability to manage Application Proxy settings or Conditional Access.
+    The Application Registration Owner role grants the ability to manage application registrations for app that the user owns, including the application manifest and adding other owners.
+
+Develop a security plan
+
+Microsoft Entra ID provides an extensive guide to planning and executing a security plan on your Microsoft Entra admin roles, Securing privileged access for hybrid and cloud deployments.
+Establish emergency accounts
+
+To maintain access to your identity management store when issue arises, prepare emergency access accounts according to Create emergency-access administrative accounts.
+Secure your administrator roles
+
+Attackers who get control of privileged accounts can do tremendous damage. Always protect these accounts first. Use the Security Defaults feature that is available to all Microsoft Entra organizations. Security Defaults enforces multifactor authentication on privileged Microsoft Entra accounts.
+
+Analyze Microsoft Entra role permissions
+Completed 100 XP
+
+    3 minutes
+
+What is a permission? The dictionary definition of permission is the consent or authorization to perform a specific action. In Microsoft Entra ID, you have permissions for each of the operations you're able to do. Permission can range from viewing your settings, to be able to change your setting. Then move on to granting permission to add or remove users and beyond. There are two primary places where permission can be assigned, at a user or group level. However, they all pass down to the user at the final point. When dealing with users, you have both a member-user and a guest-user. The default permissions for the guest-user are slightly less than the member.
+Sample of the default permissions for users
+Member Users 	Guest Users
+Enumerate list of users and their contacts 	Read own properties
+Invite guest users 	Invite guest users
+Can create Security and Microsoft 365 Groups 	Can search for non-hidden groups by name
+Register new applications 	Read properties of registered and enterprise applications
+
+Note
+
+This is just a small subset, to show differences. If you want a full list of the Default User Permissions
+Controlling permissions - add and restrict
+User settings 	Roles and administrators
+Screenshot of the Microsoft Entra ID user settings, where permissions can be restricted. 	Screenshot of the Roles and administrators screen in Microsoft Entra ID. List of roles that can be applied.
+
+You can use the User Settings inside of Microsoft Entra ID – Manage menu to restrict or control the default permissions of the default users. Or you can use Roles and administrators to add new permissions onto your users and group. Always use the concept of Least Privilege and make sure the users only have the rights they need. In User settings you can restrict the user's ability to:
+
+    Register applications
+    Access the Azure portal
+    Block LinkedIn connections
+    Manage settings for external collaboration
+
+By adding roles to a given user account or group, you can add permissions on to member users, guest users, and service principals. Adding roles gives permissions to perform specific activities. Actions are limited, which allows the rule of least privilege.
+Exploring available permissions
+
+Screenshot of the Attribute definition reader. You can see which permissions a built-in role grants.
+
+If possible, you only want to grant the minimum permissions a user needs. So be sure to know what all permissions are granted when you assign a role. You can see the list of permissions in the description of each role. To open, launch Microsoft Entra ID, then open the Roles and administrators screen. Next select a role, and open its description page from the ellipsis (...) menu. Depending on the role you chose, you'll see a large or small number of permissions. Two sets of permissions:
+
+    Role permissions
+    Guest and service principal basic read permissions
+
+
+Configure and manage custom domains
+Completed 100 XP
+
+    10 minutes
+
+A domain name is a part of the identifier for many Microsoft Entra ID resources: it's part of a user name or email address for a user, part of the address for a group, and is sometimes part of the app ID URI for an application. A resource in Microsoft Entra ID can include a domain name that's owned by the organization that contains the resource. Only a Global Administrator can manage domains in Microsoft Entra ID.
+Set the primary domain name for your Microsoft Entra organization
+
+When your organization is created, the initial domain name, such as ‘contoso.onmicrosoft.com,’ is also the primary domain name.
+
+Important
+
+The person who creates the tenant is automatically the Global administrator for that tenant. The Global administrator can add other administrators to the tenant.
+
+The primary domain is the default domain name for a new user when you create a new user. Setting a primary domain name streamlines the process for an administrator to create new users in the portal. To change the primary domain name:
+
+    Sign in to the Azure portal with an account that's a Global Administrator for the organization.
+
+    Select Microsoft Entra ID.
+
+    Select Custom domain names.
+
+    Screenshot of the Add custom user dialog box. Opening the user management page.
+
+    Select the name of the domain that you want to be the primary domain.
+
+    Select the Make primary command. Confirm your choice when prompted.
+
+    Screenshot of the configure domain dialog. You can make a domain name the primary.
+
+You can change the primary domain name for your organization to be any verified custom domain that isn't federated. Changing the primary domain for your organization won't change the user name for any existing users.
+Add custom domain names to your Microsoft Entra organization
+
+You can add up to 900 managed domain names. If you're configuring all your domains for federation with on-premises Active Directory, you can add up to 450 domain names in each organization.
+Add subdomains of a custom domain
+
+If you want to add a subdomain name such as ‘europe.contoso.com’ to your organization, you should first add and verify the root domain, such as contoso.com. The subdomain is automatically verified by Microsoft Entra ID. To see the verified subdomain you added, refresh the domain list in the browser.
+
+If you've already added a contoso.com domain to one Microsoft Entra organization, you can also verify the subdomain europe.contoso.com in a different Microsoft Entra organization. When adding the subdomain, you're prompted to add a TXT record in the DNS hosting provider.
+What to do if you change the DNS registrar for your custom domain name
+
+If you change the DNS registrars, there are no additional configuration tasks in Microsoft Entra ID. You can continue using the domain name with Microsoft Entra ID without interruption. If you use your custom domain name with Microsoft 365, Intune, or other services that rely on custom domain names in Microsoft Entra ID, see the documentation for those services.
+Delete a custom domain name
+
+You can delete a custom domain name from your Microsoft Entra ID if your organization no longer uses that domain name, or if you need to use that domain name with another Microsoft Entra ID.
+
+To delete a custom domain name, you must first ensure that no resources in your organization rely on the domain name. You can't delete a domain name from your organization if:
+
+    Any user has a user name, email address, or proxy address that includes the domain name.
+    Any group has an email address or proxy address that includes the domain name.
+    Any application in your Microsoft Entra ID has an app ID URI that includes the domain name.
+
+You must change or delete any such resource in your Microsoft Entra organization before you can delete the custom domain name.
+ForceDelete option
+
+ForceDelete can be used to remove a domain name in the Microsoft Entra admin center or using Microsoft Graph API. These options use an asynchronous operation and update all references from the custom domain name like “user@contoso.com” to the initial default domain name such as “user@contoso.onmicrosoft.com.”
+
+To call ForceDelete in the Azure portal, you must ensure that there are fewer than 1000 references to the domain name, and any references where Exchange is the provisioning service must be updated or removed in the Exchange Admin Center. Exchange Mail-Enabled Security Groups and distributed lists are included. Also, the ForceDelete operation won't succeed if either of the following is true:
+
+    You purchased a domain via Microsoft 365 domain subscription services
+    You're a partner administering on behalf of another customer organization
+
+The following actions are performed as part of the ForceDelete operation:
+
+    Renames the UPN, EmailAddress, and ProxyAddress of users with references to the custom domain name to the initial default domain name.
+    Renames the EmailAddress of groups with references to the custom domain name to the initial default domain name.
+    Renames the identifierUris of applications with references to the custom domain name to the initial default domain name.
+
+An error is returned when:
+
+    The number of objects to be renamed is greater than 1000
+    One of the applications to be renamed is a multitenant app
+
+Configure tenant-wide setting
+Completed 100 XP
+
+    4 minutes
+
+Tenant-wide settings are the configuration options that apply to all resources within your tenant as the name implies. These tenant wide options are set in specific places, to control the look, feel, and configuration of your tenant and its members. The below menu options are based on the Microsoft Entra admin center.
+
+Tenant-wide option
+
+    Tenant Properties
+        Identity - Overview page - Properties
+        Where you give the name of your directory and set values like the primary contact
+
+    User Settings
+        Identity - Users - User Settings
+        Where you define what global rights your users have, like registering applications
+
+    External Collaboration Settings
+        Identity - External I - User Settings - Manage external collaboration
+        Where you define what task an external guest user can perform like inviting more guest users
+
+Configure tenant-wide user settings
+
+Screenshot of the User settings screen in Microsoft Entra ID. Use it to configure what users can do.
+
+In Microsoft Entra ID, all users are granted a set of default permissions. A user’s access consists of the type of user, their role assignments, and their ownership of individual objects. The default user permissions can be changed only in user settings in Microsoft Entra ID.
+Member and guest users
+
+The set of default permissions received depends on whether the user is a native member of the tenant (member user). Or if the user is invited from another directory as a B2B collaboration guest (guest user).
+
+    Member users can register applications, manage their own profile photo and mobile phone number, change their own password, and invite B2B guests. In addition, users can read all directory information (with a few exceptions).
+    Guest users have restricted directory permissions. They can manage their own profile, change their own password, and retrieve some information about other users, groups, and apps; however, they can't read all directory information. For example, guest users can't enumerate the list of all users, groups, and other directory objects. Guests can be added to administrator roles, which grant them full read and write permissions contained in the role. Guests can also invite other guests.
+
+The following default permissions for member users can be restricted in the following ways:
+Permission 	Setting explanation
+Users can register application 	By default, member users can register applications.
+	Setting this option to No prevents users from creating application registrations. The ability can then be granted back to specific individuals by adding them to the Application Developer role.
+Restrict access to Microsoft Entra administration portal 	Setting this option to No lets non-administrators use the Microsoft Entra administration portal to read and manage Microsoft Entra resources. Yes restricts all non-administrators from accessing any Microsoft Entra data in the administration portal.
+	This setting doesn't restrict access to Microsoft Entra data using PowerShell or other clients such as Visual Studio. When set to Yes, to grant a specific non-admin user the ability to use the Microsoft Entra administration portal assign any administrative role such as the Directory Readers role.
+	This role allows reading basic directory information, which member users have by default (guests and service principals don't).
+Sign in with LinkedIn
+
+With more than 500 million members worldwide, LinkedIn is the largest and most trusted source of professional identities. Use this power to enhance the sign-in experience of your sites and applications.
+
+Use sign in with LinkedIn to:
+
+    Reduce friction and obtain more sign-ups by allowing members to Sign In with LinkedIn, without having the need to create a new account.
+    Minimize the costs and time associated with implementing your own sign-in, identity, profile management, and password management.
+    Personalize your sites and applications with the latest member profiles.
+
+Manage security defaults
+
+Managing security can be difficult with common identity-related attacks like password spray, replay, and phishing becoming more popular. Security defaults make it easier to help protect your organization from these attacks with preconfigured security settings:
+
+    Requiring all users to register for multifactor authentication (MFA).
+    Requiring administrators to perform multifactor authentication.
+    Blocking legacy authentication protocols.
+    Requiring users to perform multifactor authentication when necessary.
+    Protecting privileged activities like access to the Azure portal.
+
+Availability
+
+Microsoft is making Security Defaults available to everyone. The goal is to ensure that all organizations have a basic level of security enabled at no extra cost.
+Configure the external user options
+
+Screenshot of the Microsoft Entra ID manage external user settings dialog.
+
+Here you configure the actions that external users can take while using the cloud resources of your tenant.
+
+    Guest user access - Guest users can be given rights to where they operate almost as a full user, to restriction where they can only look at their own content.
+    Guest invite settings - Who can invite guests to join the organization; from guest themselves to only admins.
+    Guest self-service up - Allow guest to partake in self-service options for users.
+
+Configure tenant properties for the directory
+
+Screenshot of the Microsoft Entra ID properties dialog box. Configure the definition of your tenant.
+
+Set the basic values that define the look at feel of your tenant within Microsoft Entra ID.
+
+    Name - friendly name for your tenant, for use in the Azure portal
+    Country or region - location of your primary company and the Azure datacenters being used
+    Notification language - language used for sending notifications and alerts
+    Tenant ID - unique identifier for your tenant, used programatically
+    Technical contact - primary contact for the tenant (defaults to the user who created the tenant)
+    Global privacy contact - user or alias to contact for privacy concerns or issues
+    Privacy statement URL - link to a PDF or webpage containing the privacy rules for your cloud solutions
+
+Exercise - setting tenant-wide properties
+Completed 100 XP
+
+    4 minutes
+
+Change the tenant display name
+
+    Browse to the Azure portal and sign in using a Global administrator account for the directory.
+
+    Select the Show portal menu hamburger icon and then select Microsoft Entra ID.
+
+    Screenshot of the Azure portal menu with Microsoft Entra ID selected.
+
+    In the left navigation, in the Manage section, select Properties.
+
+    In the Name box, change the tenant name. For example, Contoso Marketing Company can be changed to Contoso Marketing Company 2.
+
+    Select Save to update the tenant properties.
+
+Find the Country / region associated with your tenant
+
+    In the Microsoft Entra ID screen, in the Manage section, select Properties.
+
+    Under Tenant properties, locate Country / region and review the information.
+
+    Important
+
+    When the tenant is created, the Country / region is specified at that time. This setting cannot be changed later.
+
+Find the location associated with your tenant
+
+Just as the Country / region is found in the Microsoft Entra ID Properties dialog, so is the location information.
+
+    In the Properties screen, under Tenant properties, locate Location and review the information.
+
+    Screenshot of the Microsoft Entra ID Properties with the Country or region settings highlighted.
+
+Find the tenant ID
+
+Azure subscriptions have a trust relationship with Microsoft Entra ID. Microsoft Entra ID is trusted to authenticate users, services, and devices for the subscription. Each subscription has a tenant ID associated with it, and there are a few ways you can find the tenant ID for your subscription.
+
+    In the Microsoft Entra ID screen, in the Manage section, select Properties.
+
+    Under Tenant properties, locate Tenant ID. Tenant ID is your unique tenant identifier.
+
+    Screenshot of the Tenant properties page with the Tenant ID box highlighted.
+
+Change the Technical contact, add your privacy info, Global privacy contact, and Privacy statement URL
+
+Microsoft strongly recommends you add both your global privacy contact and your organization's privacy statement, so your internal employees and external guests can review your policies. Because privacy statements are uniquely created and tailored for each business, we strongly recommend you contact a lawyer for assistance.
+
+Note
+
+For information about viewing or deleting personal data, see Azure Data Subject Requests. For more information, see the Service Trust portal.
+
+You add your organization's privacy information in the Properties area of Microsoft Entra ID. To access the Properties area and add your privacy information:
+
+    In the Microsoft Entra ID screen, in the Manage section, select Properties.
+
+    Screenshot of the tenant properties with the Technical contact, Global contact, and Privacy statement boxes highlighted.
+
+    Add your privacy info for your employees:
+
+        Technical contact. Type the email address for the person to contact for technical support within your organization.
+
+        Global privacy contact. Type the email address for the person to contact for inquiries about personal data privacy. This person is also who Microsoft contacts if there's a data breach. If there's no person listed here, Microsoft contacts your global administrators.
+
+        Privacy statement URL. Type the link to your organization's document that describes how your organization handles both internal and external guest's data privacy.
+
+        Screenshot of the B 2 B Collaboration Review permissions box with Accept / Cancel buttons.
+
+    Select Save.
+Knowledge check
+Completed 200 XP
+
+    2 minutes
+
+Choose the best response for each of the questions below. Then select Check your answers.
+Check your knowledge
+1.
+
+A domain name is included as part of a user name or email address for users and groups. Can a domain name also be included as part of an application or other resource?
+
+Yes, a domain name can be included as part of an application or other resource if the organization owns the domain name that contains the resource.
+
+Correct. When an organization that contains and application or other resources, the domain can be included if the same organization owns it.
+
+A domain name can be included as part of the app ID URI for an application, but can't be included as part of other resources.
+
+No, a domain name can't be included as part of an application or other resource.
+2.
+
+The proliferation of many types of devices and bring your own device (BYOD) concept require IT professionals to accommodate two rather different goals. One goal is to allow users to be productive wherever and anytime. What is the other goal?
+
+Provide antimalware apps for a various devices.
+
+Establish baseline security guidelines for users.
+
+Protect the organization's assets.
+
+Correct. Identity is new perimeter is a common security phrase these days, meaning that validation or both people and devices are required to protect company assets.
+3.
+
+Microsoft Entra guest users have restricted directory permissions. Which of the following answers best describes guest users capabilities?
+
+They can manage their own profile, change their own password, and add other B2B guests to groups.
+
+They can manage their own profile, change their own password, and retrieve some information about other users, groups, and apps.
+
+Correct. Guest users can only manage aspects of their own profile information, like their password; and view available resource like apps.
+
+They can manage their own profile, change their own password, and identify group members or other directory objects.
+
