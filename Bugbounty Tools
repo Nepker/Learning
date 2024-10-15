@@ -1,0 +1,27 @@
+Bug Bounty Tools
+Introduction
+
+In bug bounty programs, using the right tools can greatly enhance your ability to identify and exploit security vulnerabilities in web applications. Here are some essential tools that align with the bug bounty methodology:
+Information Gathering
+
+    Sublist3r: A tool for subdomain enumeration to discover additional attack surfaces.
+    Amass: Another tool for subdomain discovery and reconnaissance.
+    Censys/Shodan: Search engines to find devices, services, and assets connected to the internet.
+
+Vulnerability Identification
+
+    Nessus/Nexpose: Vulnerability scanners for identifying common security issues in web applications.
+    OWASP ZAP (Zed Attack Proxy): An open-source tool for finding vulnerabilities like SQL injection, XSS, and CSRF.
+    Burp Suite: A comprehensive toolkit for web application security testing, including scanning, crawling, and fuzzing functionalities.
+
+Exploitation and Proof of Concept
+
+    Metasploit: A penetration testing framework for developing and executing exploit code against target systems.
+    Sqlmap: A tool for automated SQL injection and database takeover.
+
+Reporting
+
+    Markdown Editors: Tools like Markdown editors for creating structured and organized bug bounty reports.
+    Screenshots and Screen Recording Tools: Utilize tools for capturing evidence of vulnerabilities and proof of concepts.
+
+By leveraging these tools effectively and following a structured bug bounty methodology, you can optimize your bug hunting efforts and contribute to the security of web applications. Remember to always prioritize responsible disclosure and ethical hacking practices in your bug bounty endeavors. Happy hunting!

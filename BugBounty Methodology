@@ -1,0 +1,52 @@
+Bug Bounty Methodology
+Introduction
+
+This bug bounty methodology is designed to guide you through the process of effectively identifying and reporting security vulnerabilities in web applications. By following this structured approach, you can maximize your chances of discovering and responsibly disclosing security issues to organizations participating in bug bounty programs.
+Scope Definition
+
+    Identify the Scope: Understand the scope of the bug bounty program, including the target applications, domains, and technologies in scope for testing.
+    Review the Rules: Familiarize yourself with the rules and guidelines provided by the organization running the bug bounty program.
+
+Information Gathering
+
+    Passive Reconnaissance:
+        Use tools like Sublist3r, Amass, and Censys to gather information about the target domain.
+        Search for subdomains, IP addresses, technologies used, and any publicly available information.
+
+    Active Reconnaissance:
+        Utilize tools like Nmap, Dirb, and Gobuster to discover open ports, directories, and files on the target web server.
+        Perform Google dorking and use specialized search engines to find hidden information.
+
+Vulnerability Identification
+
+    Web Application Scanning:
+        Use automated scanners like Nessus, Nexpose, or OWASP ZAP to identify common vulnerabilities such as SQL injection, Cross-Site Scripting (XSS), and more.
+        Manually inspect HTTP responses for potential security misconfigurations.
+
+    Manual Testing:
+        Perform manual testing for logical flaws, authorization bypasses, business logic vulnerabilities, and other complex issues.
+        Test input fields for various injection attacks, including SQL injection, XSS, and Command Injection.
+
+Exploitation and Proof of Concept
+
+    Exploitation:
+        Attempt to exploit identified vulnerabilities to demonstrate their impact.
+        Verify the exploitability of the vulnerabilities discovered during testing.
+
+    Proof of Concept:
+        Develop a clear and concise proof of concept (PoC) to demonstrate the vulnerability.
+        Provide steps to reproduce the vulnerability and its impact.
+
+Reporting
+
+    Bug Report:
+        Create a detailed report outlining the discovered vulnerabilities, including their impact and potential risks.
+        Include screenshots, PoCs, and steps to reproduce the vulnerabilities.
+
+    Responsible Disclosure:
+        Follow the organization's responsible disclosure policy when reporting vulnerabilities.
+        Allow the organization time to fix the issues before disclosing them publicly.
+
+Conclusion
+
+By following this bug bounty methodology, you can enhance your effectiveness in identifying and reporting security vulnerabilities in web applications. Remember to always prioritize ethical hacking practices, respect the rules of bug bounty programs, and contribute to a safer cyberspace. Happy hunting!
