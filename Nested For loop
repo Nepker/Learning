@@ -1,0 +1,11 @@
+let bobsFollowers = ['Ram', 'Shiva', 'Hari', 'Krishna'];
+let  tinasFollowers = ['Ram', 'Ganesh', 'Hari'] 
+let mutualFollowers = []
+for (let i = 0; i < bobsFollowers.length; i++){
+  for (let j = 0; j < tinasFollowers.length; j++){
+    if (bobsFollowers[i] === tinasFollowers[j]) {
+      mutualFollowers.push(bobsFollowers[i]); //it push or kept the same friends to mutualFollwers
+    }
+  }
+};
+console.log(mutualFollowers)
